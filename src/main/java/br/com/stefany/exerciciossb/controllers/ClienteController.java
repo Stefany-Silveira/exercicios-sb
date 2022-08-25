@@ -2,7 +2,7 @@ package br.com.stefany.exerciciossb.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
-import br.com.stefany.exerciciossb.models.Cliente;
+import br.com.stefany.exerciciossb.model.entities.Cliente;
 
 @RestController
 @RequestMapping("/clientes")
