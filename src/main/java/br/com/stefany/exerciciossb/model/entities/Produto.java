@@ -1,9 +1,9 @@
 package br.com.stefany.exerciciossb.model.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import br.com.stefany.exerciciossb.model.repository.ProdutoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.*;
 
 @Entity
 public class Produto {
@@ -13,6 +13,10 @@ public class Produto {
     private int id;
 
     private String nome;
+
+    @Autowired
+    @Transient
+    public ProdutoRepository repository;
 
     public Produto() {
 
