@@ -1,8 +1,5 @@
 package br.com.stefany.exerciciossb.model.entities;
 
-import br.com.stefany.exerciciossb.model.repository.ProdutoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 
 @Entity
@@ -14,17 +11,19 @@ public class Produto {
 
     private String nome;
 
-    @Autowired
-    @Transient
-    public ProdutoRepository repository;
+    private double preco;
+
+    private double desconto;
 
     public Produto() {
 
     }
 
-    public Produto(String nome) {
+    public Produto(String nome, double preco, double desconto) {
         super();
         this.nome = nome;
+        this.preco = preco;
+        this.desconto = desconto;
     }
 
     public int getId() {
@@ -41,5 +40,21 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
     }
 }
