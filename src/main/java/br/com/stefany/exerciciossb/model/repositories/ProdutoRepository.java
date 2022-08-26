@@ -1,4 +1,4 @@
-package br.com.stefany.exerciciossb.model.repository;
+package br.com.stefany.exerciciossb.model.repositories;
 
 import br.com.stefany.exerciciossb.model.entities.Produto;
 import org.springframework.data.repository.CrudRepository;
