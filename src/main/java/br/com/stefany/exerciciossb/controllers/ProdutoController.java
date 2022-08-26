@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import br.com.stefany.exerciciossb.model.entities.Produto;
 import br.com.stefany.exerciciossb.model.repositories.ProdutoRepository;
 
+import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/produtos")
@@ -25,6 +27,11 @@ public class ProdutoController {
     @GetMapping
     public Iterable<Produto> obterProdutos() {
         return produtoRepository.findAll();
+    }
+
+    @GetMapping(path = "/{id}")
+    public Optional<Produto> obterProdutoPorId(@PathVariable int id) {
+        return produtoRepository.findById(id);
     }
 
 
