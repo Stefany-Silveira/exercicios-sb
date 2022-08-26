@@ -18,7 +18,8 @@ public class ProdutoController {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    @PostMapping
+    //@PostMapping
+    @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
     public  @ResponseBody Produto novoProduto(@Valid Produto produto) {
         produtoRepository.save(produto);
         return produto;
@@ -34,11 +35,9 @@ public class ProdutoController {
         return produtoRepository.findById(id);
     }
 
-    @PutMapping
-    public Produto alterarProduto(@Valid Produto produto) {
-        produtoRepository.save(produto);
-        return produto;
-    }
-
-
+    //@PutMapping
+    //public Produto alterarProduto(@Valid Produto produto) {
+      //produtoRepository.save(produto);
+        //return produto;
+    //}
 }
